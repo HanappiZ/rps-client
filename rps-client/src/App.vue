@@ -21,10 +21,11 @@ export default {
   },
   data () {
     return {
-        messages: [],
+        //messages: [],
         socketId: ''
     }
 },
+
 sockets: {
     connect() {
         this.socketId = this.$socket.id
@@ -35,7 +36,12 @@ sockets: {
     serverMessages (arg) {
         this.messages = arg
     }
-}
+},
+computed: {
+    messages() {
+        return this.$store.state.messages
+    }
+},
 }
 </script>
 <style>
