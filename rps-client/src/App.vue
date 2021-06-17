@@ -2,38 +2,24 @@
   <div id="app">
     <router-view/>
   </div>
-
 </template>
+
 <script>
 export default {
   name: 'App',
+  data () {
+      return {
+      }
+  },
   components: {
   },
-  data () {
-    return {
-        //messages: [],
-        socketId: ''
-    }
-},
-
-sockets: {
-    connect() {
-        this.socketId = this.$socket.id
-    },
-    serverMessage (arg) {
-        this.messages.push(arg)
-    },
-    serverMessages (arg) {
-        this.messages = arg
-    }
-},
-computed: {
-    messages() {
-        return this.$store.state.messages
-    }
-},
+  sockets: {
+  },
+  computed: {
+  }
 }
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
