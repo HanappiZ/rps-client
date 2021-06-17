@@ -2,27 +2,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-import Screen1 from '../views/Screen1'
-import Screen2 from '../views/Screen2'
-import Screen3 from '../views/Screen3'
+import Login from '../views/Login'
+import Game from '../views/Game'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/screen1',
-        name: 'screen1',
-        component: Screen1
+        path: '/login',
+        name: 'login',
+        component: Login
     },
     {
-        path: '/screen2',
-        name: 'screen2',
-        component: Screen2
-    },
-    {
-        path: '/screen3',
-        name: 'screen3',
-        component: Screen3
+        path: '/game',
+        name: 'game',
+        component: Game
     }
 ]
 
