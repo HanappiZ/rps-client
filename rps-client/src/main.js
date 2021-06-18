@@ -8,10 +8,15 @@ import store from '@/store'
 let url = `${window.location.protocol}//${window.location.hostname}:8081`
 
 if (process.env.VUE_APP_API_URL) {
-    url = process.env.VUE_APP_API_URL
+  url = process.env.VUE_APP_API_URL
 }
+
 const io = SocketIO(url, {})
 store.socket = io
+
+if (store.state.user != null) {
+  store.dispatch('login', store.state.user.username)
+}
 
 const vueSocket = new VueSocketIO({
   debug: false,
@@ -24,9 +29,8 @@ const vueSocket = new VueSocketIO({
 
 Vue.use(vueSocket)
 
-
-
 Vue.config.productionTip = false
+
 new Vue({
   router,
   store: store,
