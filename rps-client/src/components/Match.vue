@@ -11,6 +11,9 @@
       <div v-if="mode == 'gesture' ">
         <gesture @gesture="makeTurn"/>
       </div>
+      <div v-if="mode == 'speech'">
+        <speech @speech="makeTurn"/>
+      </div>
     </div>
     <div v-if="turn">
       <div>Your choice: {{ turn }}</div>
@@ -21,9 +24,11 @@
 
 <script>
 import Gesture from './Gesture'
+import Speech from './Speech.vue'
 export default {
   components: {
-    Gesture
+    Gesture,
+    Speech
   },
   data () {
     return {
